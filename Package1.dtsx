@@ -1,0 +1,1394 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/11/2021 4:08:38 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USERMIC-7A6344E"
+  DTS:CreatorName="USERMIC-7A6344E\Administrator"
+  DTS:DTSID="{8D4A9DF5-1CBD-44DE-B272-4F907D0B98C5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="3084"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{BB9B1D9C-E8FC-4BD5-A413-74B6D18BEE2D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{35AD478B-FE24-4079-B603-83BA6CB3CE93}"
+      DTS:ObjectName="Gestionnaire de connexions Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Administrator\Data\perf.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5F900D6B-3E1D-44C6-9FB6-8EC09D18FB08}"
+      DTS:ObjectName="USERMIC-7A6344E.DwhDemo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=USERMIC-7A6344E;Initial Catalog=DwhDemo;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{306257AF-4C3D-4C83-B75B-779B96B6D47A}"
+      DTS:ObjectName="p_sexe">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">M</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8202D429-2906-4635-8587-38103926025F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Athlet">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A2C3D896-6C5E-42DB-AE7A-97ABCC30E3F8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="v_endtime">
+      <DTS:VariableValue
+        DTS:DataType="7">11/26/2021 10:15:15 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ECDB2A56-CE71-4CB8-8657-F756F7C4B532}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="v_isavailable">
+      <DTS:VariableValue
+        DTS:DataType="17">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8CE4964C-9979-4D4B-9A29-ADA372E50B37}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="v_nbre">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2F6CEE73-7601-450D-A8CF-898BD1F1E3B7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="v_sexeinput">
+      <DTS:VariableValue
+        DTS:DataType="8">M</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C8A472DB-4EB9-492D-995A-A3A4DBB7FAC0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="v_starttime">
+      <DTS:VariableValue
+        DTS:DataType="7">11/26/2021 10:14:55 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Conteneur de boucles Foreach"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Conteneur de boucles Foreach"
+      DTS:DTSID="{2A8EC735-BC34-4540-9585-1DD7C5D01608}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Conteneur de boucles Foreach">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{675045AB-50AA-4AAF-AFE5-0F4B87E480A8}"
+        DTS:ObjectName="{675045AB-50AA-4AAF-AFE5-0F4B87E480A8}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::Athlet" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{8649875A-808B-4BC5-81DA-9A196AA0DC47}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="v_nom">
+          <DTS:VariableValue
+            DTS:DataType="8">a</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{E768852C-663C-42E1-A74B-1DC47478A46F}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="v_sexe">
+          <DTS:VariableValue
+            DTS:DataType="8">a</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{30ED907F-2E7B-4651-AFBE-7F099D2F5F41}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="v_sexedescription">
+          <DTS:VariableValue
+            DTS:DataType="8">a</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Conteneur de boucles Foreach\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B4FFD4E3-AB72-4DB8-8EBF-9B3DE40E149D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Nom]"
+                          cachedDataType="nText"
+                          cachedName="Nom"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nom]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[codepays]"
+                          cachedDataType="nText"
+                          cachedName="codepays"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[codepays]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[nomt]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[nomt]"
+                          name="nomt"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[REPLACE]((DT_WSTR,50)#{Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nom]},"Algerie\\","")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">REPLACE((DT_WSTR,50)Nom,"Algerie\\","")</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[codepays2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[codepays2]"
+                          name="codepays2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[REPLACE]((DT_WSTR,50)#{Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[codepays]},"XXX\\","")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">REPLACE((DT_WSTR,50)codepays,"XXX\\","")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select cast(codepays as nvarchar(50)) as codepays, cast(nom as nvarchar(50)) as nom2 from pays</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select cast(codepays as nvarchar(50)) as codepays, cast(nom as nvarchar(50)) as nom2 from pays) [refTable]
+where [refTable].[codepays] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="codepays" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nom2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[codepays2]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+                      connectionManagerRefId="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[codepays2]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="codepays2"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[codepays2]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">codepays</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[nom2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="50"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[nom2]"
+                          name="nom2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">nom2</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into #mytemp
+(	[Nom] ,
+	[sexe] ,
+	[performance] ,
+	[SexeDesc]  ,
+	[IsAvailable] ,
+	[codepays] ,
+	[progres] 
+	)
+
+
+exec test ?,?,?,?,?,?,?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+                      connectionManagerRefId="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[Nom]"
+                          cachedDataType="nText"
+                          cachedName="Nom"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@Nom]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nom]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[sexe]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="sexe"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@sexe]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[sexe]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[performance]"
+                          cachedDataType="r8"
+                          cachedName="performance"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@performance]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[performance]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[SexeDesc]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="SexeDesc"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@SexeDesc]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexeDesc]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[IsAvailable]"
+                          cachedDataType="bool"
+                          cachedName="IsAvailable"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@IsAvailable]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsAvailable]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[codepays]"
+                          cachedDataType="nText"
+                          cachedName="codepays"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@codepays]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[codepays]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[progres]"
+                          cachedDataType="i4"
+                          cachedName="progres"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@progres]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[progres]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@Nom]"
+                          dataType="nText"
+                          name="@Nom">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">193</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@sexe]"
+                          dataType="wstr"
+                          length="255"
+                          name="@sexe">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@performance]"
+                          dataType="r8"
+                          name="@performance">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@SexeDesc]"
+                          dataType="wstr"
+                          length="8"
+                          name="@SexeDesc">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@IsAvailable]"
+                          dataType="bool"
+                          name="@IsAvailable">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@codepays]"
+                          dataType="nText"
+                          name="@codepays">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">193</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[@progres]"
+                          dataType="i4"
+                          name="@progres">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Mytable]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select nom,sexe,performance,SexeDesc,isavailable,codepays,progres
+  from Mytable
+  where sexe = ? and isavailable =?;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{2F6CEE73-7601-450D-A8CF-898BD1F1E3B7};"1:Input",{ECDB2A56-CE71-4CB8-8657-F756F7C4B532};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+                      connectionManagerRefId="Package.ConnectionManagers[USERMIC-7A6344E.DwhDemo]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[sexe]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sexe]"
+                          length="255"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[sexe]"
+                          name="sexe"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[performance]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[performance]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[performance]"
+                          name="performance"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexeDesc]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SexeDesc]"
+                          length="8"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexeDesc]"
+                          name="SexeDesc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[codepays]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[codepays]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[codepays]"
+                          name="codepays"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[progres]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[progres]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[progres]"
+                          name="progres"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nom]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nom]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nom]"
+                          name="Nom"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsAvailable]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsAvailable]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsAvailable]"
+                          name="IsAvailable"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ggg]"
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ggg]"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ggg]"
+                          name="ggg"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sexe]"
+                          dataType="wstr"
+                          length="255"
+                          name="sexe" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[performance]"
+                          dataType="r8"
+                          name="performance" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SexeDesc]"
+                          dataType="wstr"
+                          length="8"
+                          name="SexeDesc" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[codepays]"
+                          dataType="nText"
+                          name="codepays" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[progres]"
+                          dataType="i4"
+                          name="progres" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nom]"
+                          dataType="nText"
+                          name="Nom" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsAvailable]"
+                          dataType="bool"
+                          name="IsAvailable" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ggg]"
+                          dataType="nText"
+                          name="ggg" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nom]"
+                          dataType="nText"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nom]"
+                          name="Nom" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sexe]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sexe]"
+                          name="sexe" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsAvailable]"
+                          dataType="bool"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsAvailable]"
+                          name="IsAvailable" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[performance]"
+                          dataType="r8"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[performance]"
+                          name="performance" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SexeDesc]"
+                          dataType="wstr"
+                          length="8"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SexeDesc]"
+                          name="SexeDesc" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ggg]"
+                          dataType="nText"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ggg]"
+                          name="ggg" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[progres]"
+                          dataType="i4"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[progres]"
+                          name="progres" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[codepays]"
+                          dataType="nText"
+                          lineageId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[codepays]"
+                          name="codepays" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task.Paths[Lookup Match Output]"
+                  endId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Conteneur de boucles Foreach\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Conteneur de boucles Foreach\Tâche d'exécution de requêtes SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tâche d'exécution de requêtes SQL"
+          DTS:DTSID="{9163DC6C-908D-4409-89BB-97456473C183}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tâche d'exécution de requêtes SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5F900D6B-3E1D-44C6-9FB6-8EC09D18FB08}"
+              SQLTask:SqlStatementSource="select distinct isavailable from mytable&#xA;where sexe=?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::v_isavailable" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::v_sexe"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Conteneur de boucles Foreach.PrecedenceConstraints[Contrainte]"
+          DTS:CreationName=""
+          DTS:DTSID="{783926DA-E965-4855-9121-6CABCBD5F8E8}"
+          DTS:From="Package\Conteneur de boucles Foreach\Tâche d'exécution de requêtes SQL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Contrainte"
+          DTS:To="Package\Conteneur de boucles Foreach\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{25703518-D5B6-4095-960E-4EACF3AA04F1}"
+          DTS:ObjectName="{25703518-D5B6-4095-960E-4EACF3AA04F1}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::v_sexe" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de requêtes SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{888A0563-59C7-4CCD-8A98-2FAEB9299C33}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de requêtes SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F900D6B-3E1D-44C6-9FB6-8EC09D18FB08}"
+          SQLTask:SqlStatementSource="SELECT distinct [sexe] as sexe,isavailable&#xA;  FROM [DwhDemo].[dbo].[Mytable]"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Athlet" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de requêtes SQL 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{D0FD2A07-DC1F-4BEB-80BC-7E6D9D49A686}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de requêtes SQL 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F900D6B-3E1D-44C6-9FB6-8EC09D18FB08}"
+          SQLTask:SqlStatementSource="select getutcdate(),dateadd(S,-1,getutcdate())"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::v_endtime" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::v_starttime" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de requêtes SQL 2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{79777B9B-DDF6-4340-9D43-2E7B56411EA0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de requêtes SQL 2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F900D6B-3E1D-44C6-9FB6-8EC09D18FB08}"
+          SQLTask:SqlStatementSource="DROP  TABLE  IF EXISTS  #mytemp;&#xA;CREATE TABLE #mytemp(&#xA;&#x9;[Nom] [nvarchar](max) NULL,&#xA;&#x9;[sexe] [nvarchar](255) NULL,&#xA;&#x9;[performance] [float] NULL,&#xA;&#x9;[SexeDesc] [nvarchar](8) NULL,&#xA;&#x9;[IsAvailable] [bit] NULL,&#xA;&#x9;[codepays] [nvarchar](max) NULL,&#xA;&#x9;[progres] [int] NULL,&#xA;&#x9;[ggg]  AS ([Nom]+[sexe])&#xA;) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{3716E867-A6C5-405D-ACE6-78BDFBD6EFD4}"
+      DTS:From="Package\Tâche d'exécution de requêtes SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Conteneur de boucles Foreach" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2984E912-BE69-4659-9CDD-3A87E1ECE902}"
+      DTS:From="Package\Tâche d'exécution de requêtes SQL 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Tâche d'exécution de requêtes SQL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0E1093F-AD1D-4FC8-887F-7B87E1442224}"
+      DTS:From="Package\Tâche d'exécution de requêtes SQL 2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 2"
+      DTS:To="Package\Conteneur de boucles Foreach" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Tâche d'exécution de requêtes SQL"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Tâche d'exécution de requêtes SQL 1"
+          TopLeft="328.5,10.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task"
+          TopLeft="159,133" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Conteneur de boucles Foreach\Tâche d'exécution de requêtes SQL"
+          TopLeft="112,20" />
+        <EdgeLayout
+          Id="Package\Conteneur de boucles Foreach.PrecedenceConstraints[Contrainte]"
+          TopLeft="237.75,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="440,276"
+          Size="440,319"
+          Id="Package\Conteneur de boucles Foreach"
+          TopLeft="7,167" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="132.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.5,119.5"
+              Start="0,0"
+              End="94.5,112">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.75"
+                    Point2="0,59.75"
+                    Point3="4,59.75" />
+                  <mssgle:LineSegment
+                    End="90.5,59.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.5,59.75"
+                    Point2="94.5,59.75"
+                    Point3="94.5,63.75" />
+                  <mssgle:LineSegment
+                    End="94.5,112" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="328.5,29">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-69,0"
+              Start="0,0"
+              End="-61.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-61.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="263,42"
+          Id="Package\Tâche d'exécution de requêtes SQL 2"
+          TopLeft="558,33" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="689.5,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-390.5,92"
+              Start="0,0"
+              End="-390.5,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51"
+                    Point2="0,55"
+                    Point3="-4,55" />
+                  <mssgle:LineSegment
+                    End="-386.5,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-386.5,55"
+                    Point2="-390.5,55"
+                    Point3="-390.5,59" />
+                  <mssgle:LineSegment
+                    End="-390.5,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Groupe "
+          ParentId="Package"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="826,541"
+          Size="826,584"
+          Id="908fe7fe-5634-4b8d-afdf-376716527ca2"
+          TopLeft="96,186">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Tâche d'exécution de requêtes SQL</s:String>
+            <s:String>Package\Tâche d'exécution de requêtes SQL 1</s:String>
+            <s:String>Package\Conteneur de boucles Foreach</s:String>
+            <s:String>Package.PrecedenceConstraints[Contrainte]</s:String>
+            <s:String>Package.PrecedenceConstraints[Contrainte 1]</s:String>
+            <s:String>Package\Tâche d'exécution de requêtes SQL 2</s:String>
+            <s:String>Package.PrecedenceConstraints[Contrainte 2]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Conteneur de boucles Foreach\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source"
+          TopLeft="204,55" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup"
+          TopLeft="238,235" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task\Derived Column"
+          TopLeft="215,133" />
+        <EdgeLayout
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="294.75,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="282.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,36"
+              Start="0,0"
+              End="11.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="7.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,18"
+                    Point2="11.5,18"
+                    Point3="11.5,22" />
+                  <mssgle:LineSegment
+                    End="11.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Command"
+          TopLeft="294,347" />
+        <EdgeLayout
+          Id="Package\Conteneur de boucles Foreach\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="295.5,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,70"
+              Start="0,0"
+              End="85,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31"
+                    Point2="0,35"
+                    Point3="4,35" />
+                  <mssgle:LineSegment
+                    End="81,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81,35"
+                    Point2="85,35"
+                    Point3="85,39" />
+                  <mssgle:LineSegment
+                    End="85,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.5600390625,40,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conteneur de boucles Foreach\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conteneur de boucles Foreach\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
