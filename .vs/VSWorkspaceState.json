@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SSIS"
   ],
-  "SelectedNode": "\\C:\\Users\\Administrator\\MygitRepos",
+  "SelectedNode": "\\SSIS\\Package1.dtsx",
   "PreviewInSolutionExplorer": false
 }
